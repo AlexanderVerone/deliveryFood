@@ -65,8 +65,6 @@ function authorized() {
     returnMain();
   }
 
-  console.log('Авторизован');
-
   userName.textContent = login;
 
   buttonAuth.style.display = 'none';
@@ -77,8 +75,6 @@ function authorized() {
 }
 
 function notAuthorized() {
-  console.log('Не авторизован');
-
   function logIn(event) {
     event.preventDefault();
     if (loginInput.value) {
@@ -258,11 +254,11 @@ function changeCount(event) {
     if (food.count === 0) {
       cart.splice(cart.indexOf(food), 1);
     }
-  };
+  }
   if (target.classList.contains('counter-plus')) food.count++;
     renderCart();
   }
-}; 
+}
 
 function init() {
   getData('./db/partners.json').then(function (data) {
